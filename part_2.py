@@ -12,6 +12,18 @@
 
 from abc import ABC, abstractmethod   # Модуль для работы с абстрактными классами:
 class Formatted(ABC):   #наследуем класс от абстракции
-    @abstrackmethod   #это декоратор, ко-й прописываем перед функцией, к которой он будет применен
+    @abstractmethod   #это декоратор, ко-й прописываем перед функцией, к которой он будет применен
     def format(self, report):
         pass   #мы создали абстрактный класс, внутри к-го есть абстракт.метод, сейчас он пустой = шаблон
+
+class TextFormatted(Formatted):  #сначала создадим класс, к-й б. раб. с обычным текстом
+    def format(self, report):
+        print()
+        print()
+
+class HtmlFormatted(Formatted):  #класс б. преобразовывать текст в html
+    def format(self, report):
+        print()
+        print()
+
+class Report():  #класс, где б. вноситься вся инфоромация
